@@ -12,6 +12,8 @@ gamma = 0.3; k = 1; % Parâmetros do controlador não-linear (Lyapunov).
 fuzzyCreate
 
 %% Simulação
-
 open_system('model');   % open_system('model_R2020a');
-sim('model');           % sim('model_R2020a');
+out = sim('model');           % sim('model_R2020a');
+
+%% Plot da trajetória
+plotMap

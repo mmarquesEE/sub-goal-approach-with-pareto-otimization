@@ -19,7 +19,7 @@ fis = addVar(fis,"output",'alpha',[-pi,pi],alphaMF,[-pi,pi]);
 
 for i = 1:numel(d)
     fis = addInput(fis,[0 1],'Name',d{i});
-    fis = addMF(fis,d{i},'trapmf',[-0.25,0,0.33,0.5],'Name','S');
+    fis = addMF(fis,d{i},'trapmf',[-0.25,0,0.35,0.5],'Name','S');
     fis = addMF(fis,d{i},'trimf',[0.25,0.5,0.75],'Name','B');
     fis = addMF(fis,d{i},'trapmf',[0.5,0.75,1,1.25],'Name','OR');
 end
