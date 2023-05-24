@@ -11,9 +11,17 @@ gamma = 0.3; k = 1; % Parâmetros do controlador não-linear (Lyapunov).
 
 fuzzyCreate
 
+%% Variantes do modelo
+BEHAVIOR_CONTROLLER = 2;
+FUZZY       = Simulink.Variant("BEHAVIOR_CONTROLLER == 1");
+POTENTIAL   = Simulink.Variant("BEHAVIOR_CONTROLLER == 2");
+
 %% Simulação
 % open_system('model');   % open_system('model_R2020a');
 out = sim('model');     % sim('model_R2020a');
 
 %% Plot da trajetória
 plotMap
+
+figname = input('Figure name: ','s');
+saveas(fig,['Images/',figname,'.png']);
